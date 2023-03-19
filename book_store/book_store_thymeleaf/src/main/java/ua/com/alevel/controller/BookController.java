@@ -20,7 +20,7 @@ public class BookController {
     @GetMapping()
     public String findAll(Model model) {
         model.addAttribute("books", bookApiService.findAll());
-        return "404";
+        return "pages/open/404";
     }
 
     @GetMapping("/{id}")
