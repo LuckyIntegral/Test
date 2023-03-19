@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>All books</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="card mt-3">
+        <div class="card-header">
+            All books
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Book name</th>
+                    <th scope="col">Page size</th>
+                    <th scope="col">Publish date</th>
+                    <th scope="col">Show info</th>
+                    <th scope="col">Show authors</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book : ${books}">
+                    <td>
+                        <img th:src="${book.imageUrl}" alt="Book image" width="200" height="200"/>
+                    </td>
+                    <td th:text="${book.bookName}"/>
+                    <td th:text="${book.pageSize}"/>
+                    <td th:text="${book.publishDate}"/>
+                    <td>
+                        <a type="button" class="btn btn-primary" th:href="@{'/books/' + ${book.id}}" aria-disabled="true">info</a>
+                    </td>
+                    <td>
+                        <a type="button" class="btn btn-primary" th:href="@{'/books/' + ${book.id} + '/authors'}">authors</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Book details</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3 th:text="${book.bookName}"></h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tr>
+                        <td>
+                            <img th:src="${book.getImageUrl()}" class="card-image-top" alt="...">
+                        </td>
+                        <td>
+                            <h3>Authors</h3>
+                            <ul th:each="authorBook : ${book.getAuthors()}">
+                                <li th:text="${authorBook}"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Publisher</td>
+                        <td th:text="${book.publisher}"></td>
+                    </tr>
+                    <tr>
+                        <td>Publish date</td>
+                        <td th:text="${book.publishDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>Page size</td>
+                        <td th:text="${book.pageSize}"></td>
+                    </tr>
+                    <tr>
+                        <td>Publish date</td>
+                        <td th:text="${book.publishDate}"></td>
+                    </tr>
+                    <tr>
+                        <td>Book description</td>
+                        <td th:text="${book.description}"></td>
+                    </tr>
+                    <tr>
+                        <td>Book price</td>
+                        <td th:text="${book.price}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
