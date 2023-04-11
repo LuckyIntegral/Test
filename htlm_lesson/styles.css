@@ -1,0 +1,14 @@
+.custom-text {
+    color: #f8bcc7;
+}
+
+.custom-card {
+    padding: 10px;
+    background-color: #7c7c7c;
+    box-shadow: 0 1px 2px black;
+    border-radius: 10px;
+}
+
+.my-table {
+    background-color: white;
+}
